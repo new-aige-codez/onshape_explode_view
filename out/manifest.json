@@ -1,0 +1,2695 @@
+{
+  "generator": "scripts/build_views.py",
+  "source_geometry": "/home/user/onshape_explode_view/cache/assembly.gltf",
+  "coordinate_system": "assembly frame from export; +Z up toward handle; housing fixed reference; mm",
+  "onshape_document_modified": false,
+  "native_onshape_exploded_view_created": false,
+  "views": {
+    "assembled_isometric": {
+      "frame": 1,
+      "offsets_mm": {
+        "handle": 0.0,
+        "handle_nut": 0.0,
+        "handle_screw": 0.0,
+        "tamper": 0.0,
+        "housing_bolt": 0.0,
+        "upper_washer": 0.0,
+        "sleeve": 0.0,
+        "housing": 0.0,
+        "bracket": 0.0,
+        "lower_locknut": 0.0,
+        "lower_washer": 0.0,
+        "motor_screw": 0.0,
+        "motor": 0.0,
+        "motor_washer": 0.0,
+        "motor_nut": 0.0,
+        "foot": 0.0,
+        "foot_hardware": 0.0,
+        "unassigned": 0.0
+      },
+      "hidden_groups": [],
+      "camera": {
+        "name": "CAM assembled_isometric",
+        "azimuth_deg": 40,
+        "elevation_deg": 28,
+        "ortho_scale_mm": 354.15,
+        "resolution": [
+          2090,
+          2400
+        ]
+      }
+    },
+    "full_exploded_isometric": {
+      "frame": 60,
+      "offsets_mm": {
+        "handle": 330.0,
+        "handle_nut": 285.0,
+        "handle_screw": 191,
+        "tamper": 240.0,
+        "housing_bolt": 175.0,
+        "upper_washer": 145.0,
+        "sleeve": 80.0,
+        "housing": 0.0,
+        "bracket": -40.0,
+        "lower_locknut": -70.0,
+        "lower_washer": -60.0,
+        "motor_screw": -20.0,
+        "motor": -105.0,
+        "motor_washer": -125.0,
+        "motor_nut": -154,
+        "foot": -95.0,
+        "foot_hardware": -15.0,
+        "unassigned": 0.0
+      },
+      "hidden_groups": [],
+      "camera": {
+        "name": "CAM full_exploded_isometric",
+        "azimuth_deg": 40,
+        "elevation_deg": 22,
+        "ortho_scale_mm": 788.66,
+        "resolution": [
+          1320,
+          2400
+        ]
+      }
+    },
+    "motor_mount_exploded": {
+      "frame": 120,
+      "offsets_mm": {
+        "handle": 330.0,
+        "handle_nut": 285.0,
+        "handle_screw": 210.0,
+        "tamper": 240.0,
+        "housing_bolt": 190.0,
+        "upper_washer": 160.0,
+        "sleeve": 110.0,
+        "housing": 0.0,
+        "bracket": -55.0,
+        "lower_locknut": -100.0,
+        "lower_washer": -85.0,
+        "motor_screw": -25.0,
+        "motor": -150.0,
+        "motor_washer": -185.0,
+        "motor_nut": -210.0,
+        "foot": -140.0,
+        "foot_hardware": -20.0,
+        "unassigned": 0.0
+      },
+      "hidden_groups": [
+        "handle",
+        "handle_nut",
+        "handle_screw",
+        "tamper"
+      ],
+      "camera": {
+        "name": "CAM motor_mount_exploded",
+        "azimuth_deg": 40,
+        "elevation_deg": 12,
+        "ortho_scale_mm": 662.06,
+        "resolution": [
+          1320,
+          2400
+        ]
+      }
+    },
+    "corner_fastener_detail": {
+      "frame": 180,
+      "offsets_mm": {
+        "handle": 330.0,
+        "handle_nut": 285.0,
+        "handle_screw": 210.0,
+        "tamper": 240.0,
+        "housing_bolt": 175.0,
+        "upper_washer": 150.0,
+        "sleeve": 85.0,
+        "housing": 0.0,
+        "bracket": -25.0,
+        "lower_locknut": -55.0,
+        "lower_washer": -45.0,
+        "motor_screw": -20.0,
+        "motor": -105.0,
+        "motor_washer": -125.0,
+        "motor_nut": -145.0,
+        "foot": -95.0,
+        "foot_hardware": -15.0,
+        "unassigned": 0.0
+      },
+      "hidden_groups": [
+        "foot",
+        "foot_hardware",
+        "handle",
+        "handle_nut",
+        "handle_screw",
+        "motor",
+        "motor_nut",
+        "motor_screw",
+        "motor_washer",
+        "tamper"
+      ],
+      "camera": {
+        "name": "CAM corner_fastener_detail",
+        "azimuth_deg": 35,
+        "elevation_deg": 16,
+        "ortho_scale_mm": 414.16,
+        "resolution": [
+          1008,
+          2400
+        ]
+      }
+    }
+  },
+  "solver_moves": [
+    {
+      "iter": -1,
+      "group": "handle_screw",
+      "new_z_mm": 191,
+      "reason": "must_clear below tamper",
+      "view": "full_exploded_isometric"
+    },
+    {
+      "iter": -1,
+      "group": "motor_nut",
+      "new_z_mm": -154,
+      "reason": "must_clear below motor",
+      "view": "full_exploded_isometric"
+    }
+  ],
+  "components": [
+    {
+      "instance_name": "Motor Mount",
+      "base_name": "Motor Mount",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Motor Mount",
+      "geometry_ref": "assembly.gltf#mesh:mesh2070_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          14.872138
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          31.64047
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          46.364408
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -81.128,
+          -64.36,
+          -38.636
+        ],
+        "max": [
+          110.872,
+          127.64,
+          -33.636
+        ]
+      },
+      "material": "brushed_al",
+      "explode_group": "bracket",
+      "classification_rule": "override:^Motor Mount",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -40.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -55.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -25.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1",
+      "geometry_ref": "assembly.gltf#mesh:mesh342_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          99.357419
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          116.125748
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -33.635594
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          95.357,
+          112.132,
+          -33.636
+        ],
+        "max": [
+          103.357,
+          120.12,
+          94.864
+        ]
+      },
+      "material": "sleeve_metal",
+      "explode_group": "sleeve",
+      "classification_rule": "geometry:[8.0, 8.0, 128.5]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 80.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 110.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 85.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.001",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.001",
+      "geometry_ref": "assembly.gltf#mesh:mesh383_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          99.357419
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          -52.844819
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -99.135593
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          95.107,
+          -57.089,
+          -99.136
+        ],
+        "max": [
+          103.607,
+          -48.601,
+          100.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "housing_bolt",
+      "classification_rule": "geometry:[8.5, 8.5, 200.0]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 175.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 190.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 175.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.002",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.002",
+      "geometry_ref": "assembly.gltf#mesh:mesh1375_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          69.872141
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          31.640463
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -63.635588
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -40.128,
+          -1.36,
+          -87.136
+        ],
+        "max": [
+          69.872,
+          64.64,
+          -38.636
+        ]
+      },
+      "material": "graphite",
+      "explode_group": "motor",
+      "classification_rule": "geometry:[48.5, 66.0, 110.0]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -105.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -150.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -105.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.003",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.003",
+      "geometry_ref": "assembly.gltf#mesh:mesh342_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          99.357419
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          -52.844815
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -33.635587
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          95.357,
+          -56.839,
+          -33.636
+        ],
+        "max": [
+          103.357,
+          -48.851,
+          94.864
+        ]
+      },
+      "material": "sleeve_metal",
+      "explode_group": "sleeve",
+      "classification_rule": "geometry:[8.0, 8.0, 128.5]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 80.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 110.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 85.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.004",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.004",
+      "geometry_ref": "assembly.gltf#mesh:mesh342_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          116.125748
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -33.635594
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -73.613,
+          112.132,
+          -33.636
+        ],
+        "max": [
+          -65.613,
+          120.12,
+          94.864
+        ]
+      },
+      "material": "sleeve_metal",
+      "explode_group": "sleeve",
+      "classification_rule": "geometry:[8.0, 8.0, 128.5]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 80.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 110.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 85.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.005",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.005",
+      "geometry_ref": "assembly.gltf#mesh:mesh1782_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          -30.127861
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          31.64047
+        ],
+        [
+          1.0,
+          0.0,
+          -0.0,
+          84.864408
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -34.128,
+          27.646,
+          84.864
+        ],
+        "max": [
+          -26.128,
+          35.635,
+          97.201
+        ]
+      },
+      "material": "steel",
+      "explode_group": "handle_screw",
+      "classification_rule": "geometry:[8.0, 8.0, 12.3] +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 191,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 210.0,
+          "visible": false
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 210.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.006",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.006",
+      "geometry_ref": "assembly.gltf#mesh:mesh1782_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          59.872139
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          31.64047
+        ],
+        [
+          1.0,
+          0.0,
+          -0.0,
+          84.975071
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          55.872,
+          27.646,
+          84.975
+        ],
+        "max": [
+          63.872,
+          35.635,
+          97.312
+        ]
+      },
+      "material": "steel",
+      "explode_group": "handle_screw",
+      "classification_rule": "geometry:[8.0, 8.0, 12.3] +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 191,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 210.0,
+          "visible": false
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 210.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.007",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.007",
+      "geometry_ref": "assembly.gltf#mesh:mesh342_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          -52.844815
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -33.635587
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -73.613,
+          -56.839,
+          -33.636
+        ],
+        "max": [
+          -65.613,
+          -48.851,
+          94.864
+        ]
+      },
+      "material": "sleeve_metal",
+      "explode_group": "sleeve",
+      "classification_rule": "geometry:[8.0, 8.0, 128.5]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 80.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 110.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 85.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.008",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.008",
+      "geometry_ref": "assembly.gltf#mesh:mesh1879_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          -10.727861
+        ],
+        [
+          -0.0,
+          0.0,
+          -1.0,
+          4.640465
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -33.63559
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -15.728,
+          -0.352,
+          -53.636
+        ],
+        "max": [
+          -5.728,
+          9.638,
+          -33.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "motor_screw",
+      "classification_rule": "geometry:[10.0, 10.0, 20.0] +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -20.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -25.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -20.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.009",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.009",
+      "geometry_ref": "assembly.gltf#mesh:mesh1983_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          -1.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -52.844819
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          -108.135588
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -78.913,
+          -62.131,
+          -108.136
+        ],
+        "max": [
+          -60.313,
+          -43.558,
+          -93.136
+        ]
+      },
+      "material": "rubber",
+      "explode_group": "foot",
+      "classification_rule": "geometry:[15.0, 18.6, 18.6]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -95.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -140.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -95.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.010",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.010",
+      "geometry_ref": "assembly.gltf#mesh:mesh383_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          -52.844819
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -99.135593
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -73.863,
+          -57.089,
+          -99.136
+        ],
+        "max": [
+          -65.363,
+          -48.601,
+          100.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "housing_bolt",
+      "classification_rule": "geometry:[8.5, 8.5, 200.0]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 175.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 190.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 175.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.011",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.011",
+      "geometry_ref": "assembly.gltf#mesh:mesh1879_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          -10.727861
+        ],
+        [
+          -0.0,
+          0.0,
+          -1.0,
+          58.640465
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -33.635594
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -15.728,
+          53.648,
+          -53.636
+        ],
+        "max": [
+          -5.728,
+          63.638,
+          -33.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "motor_screw",
+      "classification_rule": "geometry:[10.0, 10.0, 20.0] +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -20.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -25.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -20.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.012",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.012",
+      "geometry_ref": "assembly.gltf#mesh:mesh1983_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          -69.151863
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          116.125792
+        ],
+        [
+          1.0,
+          0.0,
+          -0.0,
+          -108.135596
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -78.452,
+          106.839,
+          -108.136
+        ],
+        "max": [
+          -59.852,
+          125.412,
+          -93.136
+        ]
+      },
+      "material": "rubber",
+      "explode_group": "foot",
+      "classification_rule": "geometry:[15.0, 18.6, 18.6]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -95.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -140.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -95.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.013",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.013",
+      "geometry_ref": "assembly.gltf#mesh:mesh1879_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          40.472139
+        ],
+        [
+          -0.0,
+          0.0,
+          -1.0,
+          4.640465
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -33.63559
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          35.472,
+          -0.352,
+          -53.636
+        ],
+        "max": [
+          45.472,
+          9.638,
+          -33.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "motor_screw",
+      "classification_rule": "geometry:[10.0, 10.0, 20.0] +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -20.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -25.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -20.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.014",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.014",
+      "geometry_ref": "assembly.gltf#mesh:mesh1983_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          99.818699
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          116.125792
+        ],
+        [
+          1.0,
+          0.0,
+          -0.0,
+          -108.135596
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          90.519,
+          106.839,
+          -108.136
+        ],
+        "max": [
+          109.119,
+          125.412,
+          -93.136
+        ]
+      },
+      "material": "rubber",
+      "explode_group": "foot",
+      "classification_rule": "geometry:[15.0, 18.6, 18.6]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -95.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -140.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -95.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.015",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.015",
+      "geometry_ref": "assembly.gltf#mesh:mesh1983_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          99.818699
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -52.844767
+        ],
+        [
+          1.0,
+          0.0,
+          -0.0,
+          -108.135588
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          90.519,
+          -62.131,
+          -108.136
+        ],
+        "max": [
+          109.119,
+          -43.558,
+          -93.136
+        ]
+      },
+      "material": "rubber",
+      "explode_group": "foot",
+      "classification_rule": "geometry:[15.0, 18.6, 18.6]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -95.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -140.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -95.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.016",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.016",
+      "geometry_ref": "assembly.gltf#mesh:mesh1879_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          -0.0,
+          1.0,
+          0.0,
+          40.472139
+        ],
+        [
+          -0.0,
+          0.0,
+          -1.0,
+          58.640465
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -33.635594
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          35.472,
+          53.648,
+          -53.636
+        ],
+        "max": [
+          45.472,
+          63.638,
+          -33.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "motor_screw",
+      "classification_rule": "geometry:[10.0, 10.0, 20.0] +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -20.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -25.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -20.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.017",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.017",
+      "geometry_ref": "assembly.gltf#mesh:mesh383_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          116.12574
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -99.1356
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -73.863,
+          111.882,
+          -99.136
+        ],
+        "max": [
+          -65.363,
+          120.37,
+          100.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "housing_bolt",
+      "classification_rule": "geometry:[8.5, 8.5, 200.0]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 175.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 190.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 175.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Part 1.018",
+      "base_name": "Part 1",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Part 1.018",
+      "geometry_ref": "assembly.gltf#mesh:mesh383_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          99.357419
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          116.12574
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -99.1356
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          95.107,
+          111.882,
+          -99.136
+        ],
+        "max": [
+          103.607,
+          120.37,
+          100.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "housing_bolt",
+      "classification_rule": "geometry:[8.5, 8.5, 200.0]",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 175.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 190.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 175.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Plain washer grade A HV200 M5",
+      "base_name": "Plain washer grade A HV200 M5",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Plain washer grade A HV200 M5",
+      "geometry_ref": "assembly.gltf#mesh:mesh334_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          99.357419
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          -52.844811
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          94.864406
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          94.357,
+          -57.837,
+          94.864
+        ],
+        "max": [
+          104.357,
+          -47.852,
+          95.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "upper_washer",
+      "classification_rule": "washer +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 145.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 160.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 150.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Plain washer grade A HV200 M5.001",
+      "base_name": "Plain washer grade A HV200 M5",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Plain washer grade A HV200 M5.001",
+      "geometry_ref": "assembly.gltf#mesh:mesh334_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          99.357419
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          116.125755
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          94.864398
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          94.357,
+          111.133,
+          94.864
+        ],
+        "max": [
+          104.357,
+          121.118,
+          95.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "upper_washer",
+      "classification_rule": "washer +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 145.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 160.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 150.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Plain washer grade A HV200 M5.002",
+      "base_name": "Plain washer grade A HV200 M5",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Plain washer grade A HV200 M5.002",
+      "geometry_ref": "assembly.gltf#mesh:mesh334_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          -52.844811
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          94.864406
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -74.613,
+          -57.837,
+          94.864
+        ],
+        "max": [
+          -64.613,
+          -47.852,
+          95.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "upper_washer",
+      "classification_rule": "washer +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 145.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 160.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 150.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Plain washer grade A HV200 M5.003",
+      "base_name": "Plain washer grade A HV200 M5",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Plain washer grade A HV200 M5.003",
+      "geometry_ref": "assembly.gltf#mesh:mesh334_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          116.125755
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          94.864398
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -74.613,
+          111.133,
+          94.864
+        ],
+        "max": [
+          -64.613,
+          121.118,
+          95.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "upper_washer",
+      "classification_rule": "washer +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 145.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 160.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 150.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Preroll Housing",
+      "base_name": "Preroll Housing",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Preroll Housing",
+      "geometry_ref": "assembly.gltf#mesh:mesh1435_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          14.872138
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          31.640466
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -33.63559
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -81.116,
+          -64.347,
+          -33.636
+        ],
+        "max": [
+          110.872,
+          127.628,
+          101.364
+        ]
+      },
+      "material": "housing_blue",
+      "explode_group": "housing",
+      "classification_rule": "override:^Preroll Housing",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 0.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M4x0.001",
+      "base_name": "Prevailing torque nut thin M4x0",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M4x0.001",
+      "geometry_ref": "assembly.gltf#mesh:mesh348_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          59.872139
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          31.64047
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          102.83941
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          55.831,
+          28.14,
+          101.864
+        ],
+        "max": [
+          63.914,
+          35.14,
+          106.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "handle_nut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 285.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 285.0,
+          "visible": false
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 285.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M4x0.002",
+      "base_name": "Prevailing torque nut thin M4x0",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M4x0.002",
+      "geometry_ref": "assembly.gltf#mesh:mesh348_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -10.727861
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          58.640461
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -45.610595
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -14.769,
+          55.14,
+          -49.636
+        ],
+        "max": [
+          -6.686,
+          62.14,
+          -44.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "motor_nut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -154,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -210.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -145.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M4x0.003",
+      "base_name": "Prevailing torque nut thin M4x0",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M4x0.003",
+      "geometry_ref": "assembly.gltf#mesh:mesh348_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -10.727861
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          4.640465
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -45.610592
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -14.769,
+          1.14,
+          -49.636
+        ],
+        "max": [
+          -6.686,
+          8.14,
+          -44.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "motor_nut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -154,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -210.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -145.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M4x0.004",
+      "base_name": "Prevailing torque nut thin M4x0",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M4x0.004",
+      "geometry_ref": "assembly.gltf#mesh:mesh348_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          40.472139
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          4.640465
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -45.610592
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          36.431,
+          1.14,
+          -49.636
+        ],
+        "max": [
+          44.514,
+          8.14,
+          -44.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "motor_nut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -154,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -210.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -145.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M4x0.005",
+      "base_name": "Prevailing torque nut thin M4x0",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M4x0.005",
+      "geometry_ref": "assembly.gltf#mesh:mesh348_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          40.472139
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          58.640461
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -45.610595
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          36.431,
+          55.14,
+          -49.636
+        ],
+        "max": [
+          44.514,
+          62.14,
+          -44.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "motor_nut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -154,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -210.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -145.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M4x0.70",
+      "base_name": "Prevailing torque nut thin M4x0.70",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M4x0.70",
+      "geometry_ref": "assembly.gltf#mesh:mesh348_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -30.127861
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          31.64047
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          102.83941
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -34.169,
+          28.14,
+          101.864
+        ],
+        "max": [
+          -26.086,
+          35.14,
+          106.864
+        ]
+      },
+      "material": "steel",
+      "explode_group": "handle_nut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 285.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 285.0,
+          "visible": false
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 285.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M5x0.001",
+      "base_name": "Prevailing torque nut thin M5x0",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M5x0.001",
+      "geometry_ref": "assembly.gltf#mesh:mesh1844_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          116.125748
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -39.860595
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -74.232,
+          112.126,
+          -43.636
+        ],
+        "max": [
+          -64.994,
+          120.126,
+          -38.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "lower_locknut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -70.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -100.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -55.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M5x0.002",
+      "base_name": "Prevailing torque nut thin M5x0",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M5x0.002",
+      "geometry_ref": "assembly.gltf#mesh:mesh1844_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          99.357419
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -52.844815
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -39.860588
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          94.739,
+          -56.845,
+          -43.636
+        ],
+        "max": [
+          103.976,
+          -48.845,
+          -38.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "lower_locknut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -70.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -100.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -55.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M5x0.003",
+      "base_name": "Prevailing torque nut thin M5x0",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M5x0.003",
+      "geometry_ref": "assembly.gltf#mesh:mesh1844_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          99.357419
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          116.125748
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -39.860595
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          94.739,
+          112.126,
+          -43.636
+        ],
+        "max": [
+          103.976,
+          120.126,
+          -38.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "lower_locknut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -70.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -100.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -55.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Prevailing torque nut thin M5x0.80",
+      "base_name": "Prevailing torque nut thin M5x0.80",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Prevailing torque nut thin M5x0.80",
+      "geometry_ref": "assembly.gltf#mesh:mesh1844_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -69.613144
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -52.844815
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -39.860588
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -74.232,
+          -56.845,
+          -43.636
+        ],
+        "max": [
+          -64.994,
+          -48.845,
+          -38.636
+        ]
+      },
+      "material": "steel",
+      "explode_group": "lower_locknut",
+      "classification_rule": "nut|nyloc|locknut +position",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": -70.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": -100.0,
+          "visible": true
+        },
+        "corner_fastener_detail": {
+          "dz_mm": -55.0,
+          "visible": true
+        }
+      }
+    },
+    {
+      "instance_name": "Tamper Handle",
+      "base_name": "Tamper Handle",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Tamper Handle",
+      "geometry_ref": "assembly.gltf#mesh:mesh2028_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          14.872138
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          31.640459
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -200.135589
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -40.128,
+          21.655,
+          94.864
+        ],
+        "max": [
+          69.872,
+          41.638,
+          139.864
+        ]
+      },
+      "material": "handle_blue",
+      "explode_group": "handle",
+      "classification_rule": "override:^Tamper Handle",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 330.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 330.0,
+          "visible": false
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 330.0,
+          "visible": false
+        }
+      }
+    },
+    {
+      "instance_name": "Tamper Plate",
+      "base_name": "Tamper Plate",
+      "part_id": null,
+      "part_number": null,
+      "onshape_instance_id": null,
+      "parent_path": "Pre-Roll Filler Assembly/occurrence of Tamper Plate",
+      "geometry_ref": "assembly.gltf#mesh:mesh0_mesh",
+      "assembled_matrix_world_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          14.872138
+        ],
+        [
+          0.0,
+          -0.0,
+          1.0,
+          31.640459
+        ],
+        [
+          0.0,
+          -1.0,
+          -0.0,
+          -140.135586
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bbox_mm": {
+        "min": [
+          -63.628,
+          -46.86,
+          54.864
+        ],
+        "max": [
+          93.372,
+          110.14,
+          94.864
+        ]
+      },
+      "material": "tamper_gray",
+      "explode_group": "tamper",
+      "classification_rule": "override:^Tamper Plate",
+      "per_view": {
+        "assembled_isometric": {
+          "dz_mm": 0.0,
+          "visible": true
+        },
+        "full_exploded_isometric": {
+          "dz_mm": 240.0,
+          "visible": true
+        },
+        "motor_mount_exploded": {
+          "dz_mm": 240.0,
+          "visible": false
+        },
+        "corner_fastener_detail": {
+          "dz_mm": 240.0,
+          "visible": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+item,qty,part_name,explode_group,group_label,material_render
+1,1,Tamper Handle,handle,Handle,handle_blue
+2,1,Prevailing torque nut thin M4x0,handle_nut,Captive M4 handle nuts,steel
+3,1,Prevailing torque nut thin M4x0.70,handle_nut,Captive M4 handle nuts,steel
+4,2,Part 1,handle_screw,M4 countersunk handle screws,steel
+5,1,Tamper Plate,tamper,Tamper plate + pins,tamper_gray
+6,4,Part 1,housing_bolt,M5 housing bolts,steel
+7,4,Plain washer grade A HV200 M5,upper_washer,Upper bearing washers,steel
+8,4,Part 1,sleeve,Al compression sleeves,sleeve_metal
+9,1,Preroll Housing,housing,ASA housing,housing_blue
+10,1,Motor Mount,bracket,5052 Al X-bracket,brushed_al
+11,3,Prevailing torque nut thin M5x0,lower_locknut,Lower M5 locknuts,steel
+12,1,Prevailing torque nut thin M5x0.80,lower_locknut,Lower M5 locknuts,steel
+13,4,Part 1,motor_screw,Motor mounting screws,steel
+14,1,Part 1,motor,3650 vibration motor,graphite
+15,4,Prevailing torque nut thin M4x0,motor_nut,Motor locknuts,steel
+16,4,Part 1,foot,Rubber isolation feet,rubber

@@ -16,10 +16,9 @@ This turns an export of the Onshape assembly for the 10×10 pre-roll filling mac
 The renders are **external visualizations**. The pipeline never writes to Onshape, so the
 original parts, mates and assembly stay exactly as they are.
 
-![pipeline test](docs/pipeline_test_SYNTHETIC_fixture.png)
-*The image above comes from a **synthetic test fixture** (`tests/make_test_fixture.py`), a rough
-stand-in built from the nominal dimensions in the brief. It is **not** the real CAD. It's only here
-to show the pipeline working end to end.*
+![views](docs/views_overview.png)
+*All four views rendered from the real assembly export. (`docs/pipeline_test_SYNTHETIC_fixture.png` is the
+earlier pipeline test on a synthetic stand-in and is **not** the machine.)*
 
 ## 1. Get the geometry (0 to ~7 Onshape API calls)
 

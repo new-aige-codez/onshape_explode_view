@@ -1,0 +1,236 @@
+{
+  "inventory": {
+    "housing": {
+      "expected": 1,
+      "found": 1,
+      "ok": true
+    },
+    "tamper": {
+      "expected": 1,
+      "found": 1,
+      "ok": true
+    },
+    "handle": {
+      "expected": 1,
+      "found": 1,
+      "ok": true
+    },
+    "bracket": {
+      "expected": 1,
+      "found": 1,
+      "ok": true
+    },
+    "motor": {
+      "expected": 1,
+      "found": 1,
+      "ok": true
+    },
+    "housing_bolt": {
+      "expected": 4,
+      "found": 4,
+      "ok": true
+    },
+    "sleeve": {
+      "expected": 4,
+      "found": 4,
+      "ok": true
+    },
+    "upper_washer": {
+      "expected": 4,
+      "found": 4,
+      "ok": true
+    },
+    "lower_locknut": {
+      "expected": 4,
+      "found": 4,
+      "ok": true
+    },
+    "handle_screw": {
+      "expected": 2,
+      "found": 2,
+      "ok": true
+    },
+    "handle_nut": {
+      "expected": 2,
+      "found": 2,
+      "ok": true
+    },
+    "foot": {
+      "expected": 4,
+      "found": 4,
+      "ok": true
+    },
+    "motor_screw": {
+      "expected": 4,
+      "found": 4,
+      "ok": true
+    },
+    "motor_nut": {
+      "expected": 4,
+      "found": 4,
+      "ok": true
+    },
+    "lower_washer": {
+      "expected": 0,
+      "found": 0,
+      "ok": true
+    },
+    "motor_washer": {
+      "expected": 0,
+      "found": 0,
+      "ok": true
+    },
+    "foot_hardware": {
+      "expected": 0,
+      "found": 0,
+      "ok": true
+    }
+  },
+  "checks": [
+    {
+      "check": "total instances imported",
+      "ok": true,
+      "detail": "37 mesh instances"
+    },
+    {
+      "check": "every instance classified",
+      "ok": true,
+      "detail": "unclassified: none"
+    },
+    {
+      "check": "housing height vs brief (128.5 mm)",
+      "ok": false,
+      "detail": "CAD 135.00 mm (bbox 192.0 x 192.0 x 135.0)"
+    },
+    {
+      "check": "bracket thickness vs brief (4.75 mm)",
+      "ok": false,
+      "detail": "Motor Mount: CAD 5.00 mm"
+    },
+    {
+      "check": "motor envelope ~110x66x48",
+      "ok": true,
+      "detail": "Part 1.002: 110.0 x 66.0 x 48.5 mm"
+    },
+    {
+      "check": "motor centred on bracket",
+      "ok": true,
+      "detail": "XY offset motor->bracket centre 0.00 mm"
+    },
+    {
+      "check": "motor orientation",
+      "ok": true,
+      "detail": "motor long axis along X; below bracket: True"
+    },
+    {
+      "check": "coaxial stack @ Part 1.001",
+      "ok": true,
+      "detail": "sleeve Part 1.003 dXY=0.00; upper_washer Plain washer grade A HV200 M5 dXY=0.00; lower_locknut Prevailing torque nut thin M5x0.002 dXY=0.00"
+    },
+    {
+      "check": "bracket hole on axis of Part 1.001",
+      "ok": true,
+      "detail": "clear"
+    },
+    {
+      "check": "housing channel on axis of Part 1.001",
+      "ok": true,
+      "detail": "clear through-channel"
+    },
+    {
+      "check": "coaxial stack @ Part 1.010",
+      "ok": true,
+      "detail": "sleeve Part 1.007 dXY=0.00; upper_washer Plain washer grade A HV200 M5.002 dXY=0.00; lower_locknut Prevailing torque nut thin M5x0.80 dXY=0.00"
+    },
+    {
+      "check": "bracket hole on axis of Part 1.010",
+      "ok": true,
+      "detail": "clear"
+    },
+    {
+      "check": "housing channel on axis of Part 1.010",
+      "ok": true,
+      "detail": "clear through-channel"
+    },
+    {
+      "check": "coaxial stack @ Part 1.017",
+      "ok": true,
+      "detail": "sleeve Part 1.004 dXY=0.00; upper_washer Plain washer grade A HV200 M5.003 dXY=0.00; lower_locknut Prevailing torque nut thin M5x0.001 dXY=0.00"
+    },
+    {
+      "check": "bracket hole on axis of Part 1.017",
+      "ok": true,
+      "detail": "clear"
+    },
+    {
+      "check": "housing channel on axis of Part 1.017",
+      "ok": true,
+      "detail": "clear through-channel"
+    },
+    {
+      "check": "coaxial stack @ Part 1.018",
+      "ok": true,
+      "detail": "sleeve Part 1 dXY=0.00; upper_washer Plain washer grade A HV200 M5.001 dXY=0.00; lower_locknut Prevailing torque nut thin M5x0.003 dXY=0.00"
+    },
+    {
+      "check": "bracket hole on axis of Part 1.018",
+      "ok": true,
+      "detail": "clear"
+    },
+    {
+      "check": "housing channel on axis of Part 1.018",
+      "ok": true,
+      "detail": "clear through-channel"
+    },
+    {
+      "check": "bracket hole for Part 1.008",
+      "ok": true,
+      "detail": "clear"
+    },
+    {
+      "check": "bracket hole for Part 1.011",
+      "ok": true,
+      "detail": "clear"
+    },
+    {
+      "check": "bracket hole for Part 1.013",
+      "ok": true,
+      "detail": "clear"
+    },
+    {
+      "check": "bracket hole for Part 1.016",
+      "ok": true,
+      "detail": "clear"
+    },
+    {
+      "check": "tamper centred over housing",
+      "ok": true,
+      "detail": "XY offset 0.01 mm; explosion is pure +Z so offset is preserved"
+    },
+    {
+      "check": "tamper pins over cavities",
+      "ok": true,
+      "detail": "100 pin clusters detected, 100 sit over open cavities"
+    },
+    {
+      "check": "assembled-state contacts/interferences (INFO: touching faces and nominal threads count; review for real clashes)",
+      "ok": null,
+      "detail": "43 pairs: Motor Mount x Part 1, Motor Mount x Part 1.002, Motor Mount x Part 1.003, Motor Mount x Part 1.004, Motor Mount x Part 1.007, Motor Mount x Part 1.008, Motor Mount x Part 1.011, Motor Mount x Part 1.013, Motor Mount x Part 1.016, Motor Mount x Preroll Housing, Motor Mount x Prevailing torque nut thin M5x0.001, Motor Mount x Prevailing torque nut thin M5x0.002, Motor Mount x Prevailing torque nut thin M5x0.003, Motor Mount x Prevailing torque nut thin M5x0.80, Part 1 x Plain washer grade A HV200 M5.001, Part 1.001 x Part 1.015, Part 1.001 x Plain washer grade A HV200 M5, Part 1.001 x Prevailing torque nut thin M5x0.002, Part 1.003 x Plain washer grade A HV200 M5, Part 1.004 x Plain washer grade A HV200 M5.003, Part 1.005 x Tamper Plate, Part 1.006 x Tamper Plate, Part 1.007 x Plain washer grade A HV200 M5.002, Part 1.008 x Prevailing torque nut thin M4x0.003, Part 1.009 x Part 1.010, Part 1.010 x Plain washer grade A HV200 M5.002, Part 1.010 x Prevailing torque nut thin M5x0.80, Part 1.011 x Prevailing torque nut thin M4x0.002, Part 1.012 x Part 1.017, Part 1.013 x Prevailing torque nut thin M4x0.004, Part 1.014 x Part 1.018, Part 1.016 x Prevailing torque nut thin M4x0.005, Part 1.017 x Plain washer grade A HV200 M5.003, Part 1.017 x Prevailing torque nut thin M5x0.001, Part 1.018 x Plain washer grade A HV200 M5.001, Part 1.018 x Prevailing torque nut thin M5x0.003, Plain washer grade A HV200 M5 x Preroll Housing, Plain washer grade A HV200 M5.001 x Preroll Housing, Plain washer grade A HV200 M5.002 x Preroll Housing, Plain washer grade A HV200 M5.003 x Preroll Housing ..."
+    },
+    {
+      "check": "every group clearly visible in full_exploded_isometric",
+      "ok": true,
+      "detail": "all groups visible; occluded instances (normal for back side): ['Part 1.005', 'Part 1.008', 'Part 1.010', 'Part 1.011', 'Plain washer grade A HV200 M5.002', 'Prevailing torque nut thin M4x0.003', 'Prevailing torque nut thin M4x0.004', 'Prevailing torque nut thin M5x0.80']"
+    },
+    {
+      "check": "every group clearly visible in motor_mount_exploded",
+      "ok": true,
+      "detail": "all groups visible; occluded instances (normal for back side): ['Part 1.009']"
+    },
+    {
+      "check": "materials assigned per group",
+      "ok": true,
+      "detail": "all correct"
+    }
+  ]
+}
