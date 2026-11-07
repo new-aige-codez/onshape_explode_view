@@ -1,0 +1,357 @@
+{
+  "_comment": "All distances in millimetres. +Z = up (toward handle). Housing is the fixed reference. Offsets are starting values; the solver pushes groups outward if parts would intersect.",
+  "units_to_mm": 1000.0,
+  "classification": {
+    "_comment": "First matching rule wins (case-insensitive regex against the instance/object name). 'overrides' take precedence over everything. Hardware 'kind's are resolved to a group by position (see README).",
+    "overrides": {},
+    "keyword_rules": [
+      [
+        "tamper|plunger|pin.?plate|tamping|\\bpins?\\b",
+        "tamper"
+      ],
+      [
+        "handle|grip|knob",
+        "handle"
+      ],
+      [
+        "motor|vibrat|3650|eccentric",
+        "motor"
+      ],
+      [
+        "bracket|x.?plate|cross.?plate|base.?plate",
+        "bracket"
+      ],
+      [
+        "sleeve|spacer|bushing|tube|standoff",
+        "sleeve"
+      ],
+      [
+        "foot|feet|rubber|isolat|damper|bumper|mount",
+        "foot"
+      ],
+      [
+        "washer",
+        "kind:washer"
+      ],
+      [
+        "nut|nyloc|locknut",
+        "kind:nut"
+      ],
+      [
+        "bolt|screw|shcs|fhcs|bhcs|cap.?screw|m[345]x",
+        "kind:screw"
+      ],
+      [
+        "housing|body|pre.?roll|filler|cavity|block|main",
+        "housing"
+      ]
+    ],
+    "long_bolt_min_length_mm": 60.0,
+    "axis_match_tolerance_mm": 3.0
+  },
+  "groups": {
+    "handle": {
+      "label": "Handle",
+      "z": 300,
+      "material": "handle_blue"
+    },
+    "handle_nut": {
+      "label": "Captive M4 handle nuts",
+      "z": 270,
+      "material": "steel"
+    },
+    "handle_screw": {
+      "label": "M4 countersunk handle screws",
+      "z": 210,
+      "material": "steel"
+    },
+    "tamper": {
+      "label": "Tamper plate + pins",
+      "z": 240,
+      "material": "tamper_gray"
+    },
+    "housing_bolt": {
+      "label": "M5 housing bolts",
+      "z": 175,
+      "material": "steel"
+    },
+    "upper_washer": {
+      "label": "Upper bearing washers",
+      "z": 145,
+      "material": "steel"
+    },
+    "sleeve": {
+      "label": "Al compression sleeves",
+      "z": 80,
+      "material": "sleeve_metal"
+    },
+    "housing": {
+      "label": "ASA housing",
+      "z": 0,
+      "material": "housing_blue"
+    },
+    "bracket": {
+      "label": "5052 Al X-bracket",
+      "z": -40,
+      "material": "brushed_al"
+    },
+    "lower_locknut": {
+      "label": "Lower M5 locknuts",
+      "z": -70,
+      "material": "steel"
+    },
+    "lower_washer": {
+      "label": "Lower M5 washers",
+      "z": -60,
+      "material": "steel"
+    },
+    "motor_screw": {
+      "label": "Motor mounting screws",
+      "z": -20,
+      "material": "steel"
+    },
+    "motor": {
+      "label": "3650 vibration motor",
+      "z": -105,
+      "material": "graphite"
+    },
+    "motor_washer": {
+      "label": "Motor washers",
+      "z": -125,
+      "material": "steel"
+    },
+    "motor_nut": {
+      "label": "Motor locknuts",
+      "z": -145,
+      "material": "steel"
+    },
+    "foot": {
+      "label": "Rubber isolation feet",
+      "z": -95,
+      "material": "rubber"
+    },
+    "foot_hardware": {
+      "label": "Foot mounting hardware",
+      "z": -15,
+      "material": "steel"
+    },
+    "unassigned": {
+      "label": "UNCLASSIFIED (review!)",
+      "z": 0,
+      "material": "warning"
+    }
+  },
+  "solver": {
+    "min_gap_mm": 6.0,
+    "push_step_mm": 5.0,
+    "max_iterations": 80,
+    "must_clear": [
+      [
+        "handle_screw",
+        "tamper",
+        "below"
+      ]
+    ],
+    "_must_clear_comment": "[group_to_move, reference_group, 'below'|'above']: enforced before collision solving. Handle screws enter from under the tamper plate, so they are shown below the pin tips instead of buried among the 100 pins."
+  },
+  "views": {
+    "assembled_isometric": {
+      "exploded": false,
+      "azimuth_deg": 40,
+      "elevation_deg": 28,
+      "hide_groups": [],
+      "guides": false
+    },
+    "full_exploded_isometric": {
+      "exploded": true,
+      "azimuth_deg": 40,
+      "elevation_deg": 22,
+      "hide_groups": [],
+      "guides": true,
+      "guide_groups": [
+        "housing_bolt",
+        "motor_screw",
+        "handle_screw"
+      ]
+    },
+    "motor_mount_exploded": {
+      "exploded": true,
+      "azimuth_deg": 40,
+      "elevation_deg": 12,
+      "hide_groups": [
+        "handle",
+        "handle_nut",
+        "handle_screw",
+        "tamper"
+      ],
+      "detail_offsets": {
+        "housing_bolt": 190,
+        "upper_washer": 160,
+        "sleeve": 110,
+        "bracket": -55,
+        "lower_washer": -85,
+        "lower_locknut": -100,
+        "motor_screw": -25,
+        "motor": -150,
+        "motor_washer": -185,
+        "motor_nut": -210,
+        "foot": -140,
+        "foot_hardware": -20
+      },
+      "guides": true,
+      "guide_groups": [
+        "housing_bolt",
+        "motor_screw"
+      ]
+    },
+    "corner_fastener_detail": {
+      "exploded": true,
+      "azimuth_deg": 35,
+      "elevation_deg": 16,
+      "corner_cutaway": true,
+      "hide_groups": [
+        "handle",
+        "handle_nut",
+        "handle_screw",
+        "tamper",
+        "motor",
+        "motor_screw",
+        "motor_washer",
+        "motor_nut",
+        "foot",
+        "foot_hardware"
+      ],
+      "detail_offsets": {
+        "housing_bolt": 175,
+        "upper_washer": 150,
+        "sleeve": 85,
+        "bracket": -25,
+        "lower_washer": -45,
+        "lower_locknut": -55
+      },
+      "guides": true,
+      "guide_groups": [
+        "housing_bolt"
+      ],
+      "min_aspect": 0.42
+    }
+  },
+  "render": {
+    "long_edge_px": 2400,
+    "samples": 96,
+    "background_rgb": [
+      0.965,
+      0.968,
+      0.972
+    ],
+    "margin_frac": 0.07
+  },
+  "materials": {
+    "housing_blue": {
+      "color": [
+        0.55,
+        0.66,
+        0.78
+      ],
+      "metallic": 0.0,
+      "roughness": 0.55
+    },
+    "handle_blue": {
+      "color": [
+        0.12,
+        0.25,
+        0.48
+      ],
+      "metallic": 0.0,
+      "roughness": 0.45
+    },
+    "tamper_gray": {
+      "color": [
+        0.58,
+        0.59,
+        0.6
+      ],
+      "metallic": 0.0,
+      "roughness": 0.5
+    },
+    "brushed_al": {
+      "color": [
+        0.8,
+        0.81,
+        0.83
+      ],
+      "metallic": 1.0,
+      "roughness": 0.32,
+      "anisotropic": 0.6
+    },
+    "steel": {
+      "color": [
+        0.62,
+        0.63,
+        0.65
+      ],
+      "metallic": 1.0,
+      "roughness": 0.38
+    },
+    "sleeve_metal": {
+      "color": [
+        0.88,
+        0.88,
+        0.9
+      ],
+      "metallic": 1.0,
+      "roughness": 0.25
+    },
+    "graphite": {
+      "color": [
+        0.11,
+        0.115,
+        0.12
+      ],
+      "metallic": 0.3,
+      "roughness": 0.5
+    },
+    "rubber": {
+      "color": [
+        0.025,
+        0.025,
+        0.025
+      ],
+      "metallic": 0.0,
+      "roughness": 0.85
+    },
+    "guide": {
+      "color": [
+        0.3,
+        0.33,
+        0.38
+      ],
+      "metallic": 0.0,
+      "roughness": 1.0
+    },
+    "warning": {
+      "color": [
+        0.95,
+        0.15,
+        0.55
+      ],
+      "metallic": 0.0,
+      "roughness": 0.6
+    }
+  },
+  "expected_inventory": {
+    "_comment": "Expected counts per group from the design brief. Used only for verification - nothing is created to fill gaps.",
+    "housing": 1,
+    "tamper": 1,
+    "handle": 1,
+    "bracket": 1,
+    "motor": 1,
+    "housing_bolt": 4,
+    "sleeve": 4,
+    "upper_washer": 4,
+    "lower_locknut": 4,
+    "handle_screw": 2,
+    "handle_nut": 2,
+    "foot": 4
+  }
+}

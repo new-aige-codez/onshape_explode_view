@@ -1,0 +1,5 @@
+out/
+cache/
+__pycache__/
+*.blend1
+tests/fixture_synthetic.glb
