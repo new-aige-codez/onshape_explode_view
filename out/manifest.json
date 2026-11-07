@@ -1877,7 +1877,7 @@
     },
     {
       "instance_name": "Prevailing torque nut thin M4x0.001",
-      "base_name": "Prevailing torque nut thin M4x0",
+      "base_name": "Prevailing torque nut thin M4x0.70",
       "part_id": null,
       "part_number": null,
       "onshape_instance_id": null,
@@ -1945,7 +1945,7 @@
     },
     {
       "instance_name": "Prevailing torque nut thin M4x0.002",
-      "base_name": "Prevailing torque nut thin M4x0",
+      "base_name": "Prevailing torque nut thin M4x0.70",
       "part_id": null,
       "part_number": null,
       "onshape_instance_id": null,
@@ -2013,7 +2013,7 @@
     },
     {
       "instance_name": "Prevailing torque nut thin M4x0.003",
-      "base_name": "Prevailing torque nut thin M4x0",
+      "base_name": "Prevailing torque nut thin M4x0.70",
       "part_id": null,
       "part_number": null,
       "onshape_instance_id": null,
@@ -2081,7 +2081,7 @@
     },
     {
       "instance_name": "Prevailing torque nut thin M4x0.004",
-      "base_name": "Prevailing torque nut thin M4x0",
+      "base_name": "Prevailing torque nut thin M4x0.70",
       "part_id": null,
       "part_number": null,
       "onshape_instance_id": null,
@@ -2149,7 +2149,7 @@
     },
     {
       "instance_name": "Prevailing torque nut thin M4x0.005",
-      "base_name": "Prevailing torque nut thin M4x0",
+      "base_name": "Prevailing torque nut thin M4x0.70",
       "part_id": null,
       "part_number": null,
       "onshape_instance_id": null,
@@ -2285,7 +2285,7 @@
     },
     {
       "instance_name": "Prevailing torque nut thin M5x0.001",
-      "base_name": "Prevailing torque nut thin M5x0",
+      "base_name": "Prevailing torque nut thin M5x0.80",
       "part_id": null,
       "part_number": null,
       "onshape_instance_id": null,
@@ -2353,7 +2353,7 @@
     },
     {
       "instance_name": "Prevailing torque nut thin M5x0.002",
-      "base_name": "Prevailing torque nut thin M5x0",
+      "base_name": "Prevailing torque nut thin M5x0.80",
       "part_id": null,
       "part_number": null,
       "onshape_instance_id": null,
@@ -2421,7 +2421,7 @@
     },
     {
       "instance_name": "Prevailing torque nut thin M5x0.003",
-      "base_name": "Prevailing torque nut thin M5x0",
+      "base_name": "Prevailing torque nut thin M5x0.80",
       "part_id": null,
       "part_number": null,
       "onshape_instance_id": null,

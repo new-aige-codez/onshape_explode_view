@@ -177,6 +177,17 @@ def import_assembly(path, mm, up_axis="+Z"):
         if o not in meshes:
             bpy.data.objects.remove(o, do_unlink=True)
     parts = [Part(o, paths[o.name], mm) for o in meshes]
+    # Blender renames duplicates "Name.001", which also mangles CAD names that end in ".NN"
+    # (e.g. "nut M4x0.70" -> "nut M4x0.001"). Instances sharing mesh data are the same part, so take
+    # the canonical name from the instance that kept its original (un-suffixed) name.
+    by_mesh = {}
+    for p in parts:
+        by_mesh.setdefault(p.mesh_name, []).append(p)
+    for group in by_mesh.values():
+        orig = [q.name for q in group if not re.search(r"\.\d{3}$", q.name)]
+        canon = strip_instance_suffix(orig[0]) if orig else strip_instance_suffix(group[0].name)
+        for q in group:
+            q.base_name = canon
     log(f"imported {len(parts)} mesh instances from {os.path.basename(path)}")
     return parts
 
@@ -468,6 +479,28 @@ def run_checks(parts, H, cfg, off_full):
                     in_cav += 1
             add("tamper pins over cavities", in_cav == len(centres),
                 f"{len(centres)} pin clusters detected, {in_cav} sit over open cavities")
+
+    # fastener engagement: every nut must sit on a coaxial screw of matching size
+    screws = [p for p in parts if p.group in ("housing_bolt", "motor_screw", "handle_screw", "foot_hardware")
+              and p.size[2] > 6]
+    for n in [p for p in parts if p.group in ("lower_locknut", "motor_nut", "handle_nut")]:
+        co = [q for q in screws if np.linalg.norm(q.xy - n.xy) <= tol]
+        if not co:
+            add(f"fastener: {n.name}", False, "no coaxial screw found")
+            continue
+        sc = co[0]
+        zs = sc.verts0[:, 2]
+        mid = sc.verts0[(zs > np.percentile(zs, 30)) & (zs < np.percentile(zs, 70))]
+        shank_r = float(np.median(np.linalg.norm(mid[:, :2] - sc.xy, axis=1).max(keepdims=True)))
+        bore_r = float(np.linalg.norm(n.verts0[:, :2] - n.xy, axis=1).min())
+        overlap = min(sc.bmax[2], n.bmax[2]) - max(sc.bmin[2], n.bmin[2])
+        issues = []
+        if overlap < 0:
+            issues.append(f"screw does not reach nut (gap {-overlap:.2f} mm)")
+        if 2 * shank_r > 2 * bore_r + 1.2:
+            issues.append(f"size mismatch: screw shank Ø{2 * shank_r:.2f} vs nut bore Ø{2 * bore_r:.2f}")
+        add(f"fastener: {n.name} on {sc.name}", not issues,
+            "; ".join(issues) if issues else f"engaged {overlap:.1f} mm, shank Ø{2 * shank_r:.2f} / bore Ø{2 * bore_r:.2f}")
 
     # assembled interferences (CAD info)
     inter = []
@@ -846,23 +879,30 @@ def write_outputs(out, parts, H, cfg, views_state, checks, args, moves):
     json.dump(manifest, open(os.path.join(out, "manifest.json"), "w"), indent=2)
 
     # BOM
-    rows = {}
+    rows, info = {}, {}
+    notes = {f"geometry:{r['dims_mm']}": r.get("note") for r in cfg["classification"].get("geometry_rules", [])}
     for p in parts:
         k = (p.group, p.base_name)
         rows.setdefault(k, 0)
         rows[k] += 1
+        d = sorted(p.size.tolist(), reverse=True)
+        info[k] = (notes.get((p.rule or "").replace(" +position", "")) or cfg["groups"][p.group]["label"],
+                   " x ".join(f"{v:.1f}" for v in d))
     order = list(cfg["groups"])
     items = sorted(rows.items(), key=lambda kv: (order.index(kv[0][0]), kv[0][1]))
     with open(os.path.join(out, "bom.csv"), "w", newline="") as fh:
         w = csv.writer(fh)
-        w.writerow(["item", "qty", "part_name", "explode_group", "group_label", "material_render"])
+        w.writerow(["item", "qty", "cad_part_name", "identified_as", "envelope_mm", "explode_group",
+                    "group_label", "material_render"])
         for i, ((g, n), q) in enumerate(items, 1):
-            w.writerow([i, q, n, g, cfg["groups"][g]["label"], cfg["groups"][g]["material"]])
+            w.writerow([i, q, n, info[(g, n)][0], info[(g, n)][1], g, cfg["groups"][g]["label"],
+                        cfg["groups"][g]["material"]])
     with open(os.path.join(out, "bom.md"), "w") as fh:
         fh.write("# Bill of Materials (from exported assembly instances)\n\n")
-        fh.write("| # | Qty | Part (CAD name) | Group |\n|---:|---:|---|---|\n")
+        fh.write("| # | Qty | CAD part name | Identified as | Envelope (mm) | Explode group |\n"
+                 "|---:|---:|---|---|---|---|\n")
         for i, ((g, n), q) in enumerate(items, 1):
-            fh.write(f"| {i} | {q} | {n} | {cfg['groups'][g]['label']} |\n")
+            fh.write(f"| {i} | {q} | {n} | {info[(g, n)][0]} | {info[(g, n)][1]} | {cfg['groups'][g]['label']} |\n")
         fh.write(f"\n**Total instances:** {len(parts)}\n")
         if args.bom_json and os.path.exists(args.bom_json):
             fh.write("\nAn Onshape BOM was cached at `" + os.path.basename(args.bom_json) +
