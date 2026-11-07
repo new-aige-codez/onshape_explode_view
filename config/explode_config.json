@@ -1,9 +1,16 @@
 {
   "_comment": "All distances in millimetres. +Z = up (toward handle). Housing is the fixed reference. Offsets are starting values; the solver pushes groups outward if parts would intersect.",
+  "up_axis": "-Y",
+  "_up_axis_comment": "Onshape glTF export of this assembly arrives with the handle toward -Y after import; one rigid rotation maps it to +Z.",
   "units_to_mm": 1000.0,
   "classification": {
     "_comment": "First matching rule wins (case-insensitive regex against the instance/object name). 'overrides' take precedence over everything. Hardware 'kind's are resolved to a group by position (see README).",
-    "overrides": {},
+    "overrides": {
+      "^Tamper Handle": "handle",
+      "^Motor Mount": "bracket",
+      "^Preroll Housing": "housing",
+      "^Tamper Plate": "tamper"
+    },
     "keyword_rules": [
       [
         "tamper|plunger|pin.?plate|tamping|\\bpins?\\b",
@@ -47,17 +54,74 @@
       ]
     ],
     "long_bolt_min_length_mm": 60.0,
-    "axis_match_tolerance_mm": 3.0
+    "axis_match_tolerance_mm": 3.0,
+    "geometry_rules": [
+      {
+        "dims_mm": [
+          8.5,
+          8.5,
+          200.0
+        ],
+        "target": "kind:screw",
+        "note": "M5 x 200 housing bolt"
+      },
+      {
+        "dims_mm": [
+          8.0,
+          8.0,
+          128.5
+        ],
+        "target": "sleeve",
+        "note": "Al compression sleeve 8/6 x 128.5"
+      },
+      {
+        "dims_mm": [
+          48.5,
+          66.0,
+          110.0
+        ],
+        "target": "motor",
+        "tol_mm": 1.0,
+        "note": "3650 vibration motor"
+      },
+      {
+        "dims_mm": [
+          15.0,
+          18.6,
+          18.6
+        ],
+        "target": "foot",
+        "note": "rubber isolation foot"
+      },
+      {
+        "dims_mm": [
+          10.0,
+          10.0,
+          20.0
+        ],
+        "target": "kind:screw",
+        "note": "M4 x 20 motor screw"
+      },
+      {
+        "dims_mm": [
+          8.0,
+          8.0,
+          12.3
+        ],
+        "target": "kind:screw",
+        "note": "M4 countersunk handle screw"
+      }
+    ]
   },
   "groups": {
     "handle": {
       "label": "Handle",
-      "z": 300,
+      "z": 330,
       "material": "handle_blue"
     },
     "handle_nut": {
       "label": "Captive M4 handle nuts",
-      "z": 270,
+      "z": 285,
       "material": "steel"
     },
     "handle_screw": {
@@ -149,6 +213,11 @@
       [
         "handle_screw",
         "tamper",
+        "below"
+      ],
+      [
+        "motor_nut",
+        "motor",
         "below"
       ]
     ],
@@ -249,9 +318,9 @@
   "materials": {
     "housing_blue": {
       "color": [
-        0.55,
-        0.66,
-        0.78
+        0.5,
+        0.62,
+        0.76
       ],
       "metallic": 0.0,
       "roughness": 0.55
@@ -267,22 +336,22 @@
     },
     "tamper_gray": {
       "color": [
-        0.58,
-        0.59,
-        0.6
+        0.48,
+        0.49,
+        0.5
       ],
       "metallic": 0.0,
       "roughness": 0.5
     },
     "brushed_al": {
       "color": [
-        0.8,
-        0.81,
-        0.83
+        0.86,
+        0.87,
+        0.89
       ],
-      "metallic": 1.0,
-      "roughness": 0.32,
-      "anisotropic": 0.6
+      "metallic": 0.85,
+      "roughness": 0.36,
+      "anisotropic": 0.5
     },
     "steel": {
       "color": [
@@ -352,6 +421,15 @@
     "lower_locknut": 4,
     "handle_screw": 2,
     "handle_nut": 2,
-    "foot": 4
+    "foot": 4,
+    "motor_screw": 4,
+    "motor_nut": 4,
+    "lower_washer": 0,
+    "motor_washer": 0,
+    "foot_hardware": 0
+  },
+  "expected_dims": {
+    "housing_height_mm": 128.5,
+    "bracket_thickness_mm": 4.75
   }
 }

@@ -1,4 +1,4 @@
-out/
+out/*.blend1
 cache/
 __pycache__/
 *.blend1

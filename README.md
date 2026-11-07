@@ -90,10 +90,22 @@ under each motor screw; tamper pins over open cavities; intersections remaining 
 visibility (each group must have at least one clearly visible instance); materials per group; and a list of
 assembled-state contacts/interferences (for information only).
 
-## Status
-* **Native Onshape exploded views were not created.** In the authoring session no Onshape MCP and no API
-  credentials were available, so the public API could not be checked for an exploded-view *create* endpoint.
-  Neither the Jarvis MCP nor the public API reference was confirmed to support one, and moving instances
-  through the assembly API is **not** the same as a native exploded view (it would change the assembled
-  positions), so it wasn't attempted.
-* The pipeline has been tested end to end only on the synthetic fixture (`python3 tests/make_test_fixture.py tests/fixture_synthetic.glb`).
+## Status (run on the real export, `Pre-Roll Filler Assembly.gltf`)
+* **The deliverables in `out/` were built from the real Onshape glTF export.** It was exported by hand from the
+  Onshape UI, so the pipeline made **0 Onshape API calls**. Its only Onshape traffic was 2 failed requests in the
+  authoring session (one blocked by the network, one refused with 403 because no key was supplied).
+* **Native Onshape exploded views were not created.** A supported create endpoint couldn't be verified (no MCP and
+  no API key were available in the authoring session). These are external visualizations; the Onshape document,
+  parts and mates are unchanged.
+* The export's "up" direction is −Y, so `config.up_axis = "-Y"` applies one rigid rotation to the whole assembly.
+* 24 of the 37 instances are named just "Part 1", so they're classified by size signature (`classification.geometry_rules`).
+
+### CAD findings worth reviewing (details in `out/report.md`)
+| # | Finding | Evidence |
+|---|---|---|
+| 1 | **The motor screws are M5 (Ø5.0 shank, Ø10 countersunk head), but they mate with M4 nuts** ("Prevailing torque nut thin M4x0.70", Ø3.24 bore) | 4 screw/nut interferences of 0.88 mm radial |
+| 2 | **The M4 handle screws end 4.7 mm short of the captive M4 nuts** (screw top z = 97.2, nut bottom z = 101.9) | They never engage; consider M4×16–18, or moving the nuts down |
+| 3 | The housing is **135.0 mm** tall, not 128.5 mm (the sleeves are 128.5 mm; the bolt heads sit in 6.5 mm counterbores) | bbox |
+| 4 | The X-bracket ("Motor Mount") is modelled at **5.00 mm**, not 4.75 mm (0.187" sheet) | bbox |
+| 5 | **No motor washers** in the CAD; the motor uses 4 screws + 4 nuts. **The rubber feet thread onto the ends of the 200 mm housing bolts**; there's no separate foot hardware | inventory |
+| 6 | Everything else checks out: all 4 bolt stacks (bolt, washer, sleeve, nut, foot) are coaxial to 0.00 mm; the bracket holes and housing channels are open on every axis; the motor is centred on the bracket; all 100 tamper pins sit over open cavities | ray-cast checks |

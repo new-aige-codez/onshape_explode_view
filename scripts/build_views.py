@@ -143,7 +143,17 @@ def reset_scene():
     bpy.ops.wm.read_factory_settings(use_empty=True)
 
 
-def import_assembly(path, mm):
+UP_ROTATIONS = {  # rotation that brings the model's "up" (toward the handle) onto +Z
+    "+Z": Matrix.Identity(4),
+    "-Z": Matrix.Rotation(math.pi, 4, "X"),
+    "+Y": Matrix.Rotation(math.pi / 2, 4, "X"),
+    "-Y": Matrix.Rotation(-math.pi / 2, 4, "X"),
+    "+X": Matrix.Rotation(-math.pi / 2, 4, "Y"),
+    "-X": Matrix.Rotation(math.pi / 2, 4, "Y"),
+}
+
+
+def import_assembly(path, mm, up_axis="+Z"):
     before = set(bpy.data.objects)
     bpy.ops.import_scene.gltf(filepath=os.path.abspath(path))
     new = [o for o in bpy.data.objects if o not in before]
@@ -156,8 +166,11 @@ def import_assembly(path, mm):
             p = p.parent
         paths[o.name] = "/".join(reversed(chain))
     # flatten hierarchy: every part becomes an independent world-space object
+    # (plus one rigid whole-assembly rotation so the machine's up axis is +Z;
+    #  relative placements are untouched)
+    R = UP_ROTATIONS[up_axis]
     for o in meshes:
-        mw = o.matrix_world.copy()
+        mw = R @ o.matrix_world.copy()
         o.parent = None
         o.matrix_world = mw
     for o in new:
@@ -181,6 +194,19 @@ def classify(parts, cfg):
                 p.group, p.rule = g, f"override:{rx.pattern}"
                 break
         if p.group:
+            continue
+        # size signatures (sorted bbox dims, mm) for generically named CAD parts like "Part 1"
+        dims = sorted(p.size.tolist())
+        for sig in cl.get("geometry_rules", []):
+            if all(abs(a - b) <= sig.get("tol_mm", 0.6) for a, b in zip(dims, sorted(sig["dims_mm"]))):
+                tgt = sig["target"]
+                p.rule = f"geometry:{sig['dims_mm']}"
+                if tgt.startswith("kind:"):
+                    p.kind = tgt[5:]
+                else:
+                    p.group = tgt
+                break
+        if p.group or p.kind:
             continue
         for rx, tgt in rules:
             if rx.search(p.name):
@@ -211,7 +237,10 @@ def classify(parts, cfg):
             p.group = "housing_bolt"
     bolt_axes = [p.xy for p in parts if p.group == "housing_bolt"]
     foot_axes = [p.xy for p in parts if p.group == "foot"]
-    upper_parts = [p for p in parts if p.group in ("handle", "tamper")]
+    handles = [p for p in parts if p.group == "handle"]
+
+    def under_handle(p):
+        return any(np.all(p.xy >= h.bmin[:2] - 5) and np.all(p.xy <= h.bmax[:2] + 5) for h in handles)
 
     def near(xy, axes):
         return any(np.linalg.norm(xy - a) <= tol for a in axes)
@@ -220,7 +249,7 @@ def classify(parts, cfg):
         if p.group or not p.kind:
             continue
         on_bolt, on_foot = near(p.xy, bolt_axes), near(p.xy, foot_axes)
-        above = p.center[2] > htop - 1.0
+        above = p.center[2] > htop - 1.0 or (p.center[2] > hz_mid and under_handle(p))
         if p.kind == "washer":
             p.group = ("upper_washer" if p.center[2] > hz_mid else "lower_washer") if on_bolt else \
                       "foot_hardware" if on_foot else "upper_washer" if above else "motor_washer"
@@ -363,12 +392,15 @@ def run_checks(parts, H, cfg, off_full):
     add("every instance classified", not un, "unclassified: " + (", ".join(un) if un else "none"))
 
     # housing dims
-    add("housing height ~128.5 mm", abs(H.size[2] - 128.5) < 2.0,
-        f"measured {H.size[2]:.2f} mm (bbox {H.size[0]:.1f} x {H.size[1]:.1f} x {H.size[2]:.1f})")
+    ex = cfg.get("expected_dims", {})
+    hh = ex.get("housing_height_mm", 128.5)
+    add(f"housing height vs brief ({hh} mm)", abs(H.size[2] - hh) < 1.0,
+        f"CAD {H.size[2]:.2f} mm (bbox {H.size[0]:.1f} x {H.size[1]:.1f} x {H.size[2]:.1f})")
 
     # bracket thickness
     for b in by.get("bracket", []):
-        add("bracket thickness ~4.75 mm", abs(b.size[2] - 4.75) < 0.3, f"{b.name}: Z extent {b.size[2]:.2f} mm")
+        bt = ex.get("bracket_thickness_mm", 4.75)
+        add(f"bracket thickness vs brief ({bt} mm)", abs(b.size[2] - bt) < 0.1, f"{b.name}: CAD {b.size[2]:.2f} mm")
 
     # motor envelope
     for m in by.get("motor", []):
@@ -417,15 +449,18 @@ def run_checks(parts, H, cfg, off_full):
         add("tamper centred over housing", dxy < 1.0, f"XY offset {dxy:.2f} mm; explosion is pure +Z so offset is preserved")
         tips = t.verts0[t.verts0[:, 2] < t.bmax[2] - 15.0]
         if len(tips):
-            keys = np.unique(np.round(tips[:, :2] / 2.0).astype(int), axis=0)
-            # cluster pin centres
-            pts = tips[:, :2]
-            centres = []
-            for k in keys:
-                sel = pts[np.all(np.round(pts / 2.0).astype(int) == k, axis=1)]
-                c = sel.mean(axis=0)
-                if not any(np.linalg.norm(c - q) < 4 for q in centres):
+            # greedy clustering of pin geometry (unique 0.5 mm XY cells) into pins
+            cells = np.unique(np.round(tips[:, :2] * 2) / 2, axis=0)
+            centres, members = [], []
+            for c in cells:
+                for k, q in enumerate(centres):
+                    if np.linalg.norm(c - q) < 5.0:
+                        members[k].append(c)
+                        centres[k] = np.mean(members[k], axis=0)
+                        break
+                else:
                     centres.append(c)
+                    members.append([c])
             in_cav = 0
             for c in centres:
                 hits = ray_hits(H, c, H.bmax[2] + 5, H.bmin[2] - 5)
@@ -534,7 +569,7 @@ def setup_world_and_render(cfg, args):
             out = w.node_tree.nodes.new("ShaderNodeOutputWorld")
             w.node_tree.links.new(bg.outputs[0], out.inputs[0])
         bg.inputs[0].default_value = (0.9, 0.92, 0.95, 1)
-        bg.inputs[1].default_value = 0.35
+        bg.inputs[1].default_value = 0.5
     else:
         w.color = (0.9, 0.92, 0.95)
 
@@ -544,8 +579,8 @@ def add_lights(center, radius, mm):
     s = radius / mm
     rig = bpy.data.collections.new("Studio Lights")
     bpy.context.scene.collection.children.link(rig)
-    specs = [("Key", (1.2, -0.6, 1.5), 2.2, 140), ("Fill", (-1.3, 0.9, 0.8), 3.0, 55),
-             ("Rim", (-0.4, 1.6, 1.1), 1.4, 80), ("Top", (0, 0, 2.2), 2.5, 45)]
+    specs = [("Key", (1.2, -0.6, 1.5), 2.2, 100), ("Fill", (-1.3, 0.9, 0.8), 3.0, 40),
+             ("Rim", (-0.4, 1.6, 1.1), 1.4, 60), ("Top", (0, 0, 2.2), 2.5, 30)]
     c = Vector(center) / mm
     for name, d, size, energy in specs:
         L = bpy.data.lights.new(name, "AREA")
@@ -876,14 +911,14 @@ def main():
     mm = cfg["units_to_mm"]
     Ctx.mm = mm
     reset_scene()
-    parts = import_assembly(args.glb, mm)
+    parts = import_assembly(args.glb, mm, cfg.get("up_axis", "+Z"))
     H = classify(parts, cfg)
 
     if args.dump_names:
         for p in sorted(parts, key=lambda q: -q.center[2]):
             print(f"{p.name:45s} grp={p.group:15s} kind={str(p.kind):7s} "
                   f"ctr=({p.center[0]:7.1f},{p.center[1]:7.1f},{p.center[2]:7.1f}) "
-                  f"size=({p.size[0]:6.1f},{p.size[1]:6.1f},{p.size[2]:6.1f}) rule={p.rule}")
+                  f"size=({p.size[0]:6.1f},{p.size[1]:6.1f},{p.size[2]:6.1f}) mesh={p.mesh_name} rule={p.rule}")
         return
 
     t0 = time.time()
