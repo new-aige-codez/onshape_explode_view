@@ -1,0 +1,9 @@
+Part,Qty used,Supplier,Pack,Item USD,Shipping USD,Tax USD,Total USD,Notes
+"Long bolts, M5 x 190, half-threaded, 12.9",4,eBay (chinesetool),5,14.64,5.00,1.61,21.25,Confirm >= 60 mm thread from tip on arrival (returns through Dec 27)
+"Sleeve tube 8 x 6 x 300 mm (cut 4 @ 128.8 mm)",2 tubes,ServoCity,1 each,10.98,8.91,1.21,21.10,
+"M5 x 25 countersunk, 304 SS (motor + handle)",6,Amazon (KEDIAS),25,6.49,0.00,0.71,7.20,
+"M5 washers 10 mm, 304 SS",12,Amazon (Mellewell),50,5.29,0.00,0.58,5.87,Tax split from combined order ($1.24)
+"M5 nylon-insert locknuts, zinc-plated",14,Amazon (Yinpecly),100,5.99,0.00,0.66,6.65,Tax split from combined order; carbon steel OK indoors
+"Rubber feet 20 x 20, female M5",4,Walmart (Tasharina),4,12.12,0.00,1.33,13.45,Confirm size/thread on arrival
+TOTAL,,,,55.51,13.91,6.10,75.52,
+X-bracket (0.187 in 5052 + countersinks),1,SendCutSend,1,quote,,,,Not yet ordered
