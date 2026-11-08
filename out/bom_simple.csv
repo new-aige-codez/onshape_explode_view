@@ -1,0 +1,14 @@
+﻿Item,Part / spec,Qty needed,Top pick,Price per pack USD,Line total USD,Link,Buy locally?,Notes
+A4,"X-bracket, 5052-H32 0.187 in, laser cut + 4 countersinks",1,SendCutSend,quote,quote,https://sendcutsend.com/materials/5052-aluminum/,No,Verified page. Add countersinking service at checkout
+B1,"M5 x 190 socket head bolt, 304 SS (need >= 60 mm thread)",4,Amazon 10-pk,8.86,8.86,https://www.amazon.com/dp/B0DRB3HCGS,"No (fallback: M5 SS threaded rod + nut, Ace/Home Depot)",Thread length NOT confirmed - check listing/ask seller before buying
+B2,Al tube 8 OD x 6 ID x 300 mm (cut 4 sleeves @ 128.8 mm),2,ServoCity,5.49,10.98,https://www.servocity.com/4100-series-aluminum-tube-6mm-id-x-8mm-od-300mm-length,Maybe: K&S 5/16 in x .035 wall tube (7.94 OD x 6.17 ID) at some Ace/hobby stores,Verified in stock $5.49
+B3,"M5 flat washer 10 x 1 mm, 304 SS",12,Amazon 100-pk,5.99,5.99,https://www.amazon.com/dp/B0H3CGQ3D3,Yes - Home Depot / Lowe's / Ace (Hillman metric),Local packs cost more per piece but no wait
+B4,"M5 nylon-insert locknut, 304 SS",12,Amazon 100-pk,6.99,6.99,https://www.amazon.com/dp/B09PF4T3HD,Yes - Home Depot / Lowe's / Ace,4 bracket + 4 motor + 4 foot jam nuts
+B5,"M5 x 20 countersunk socket, DIN 7991, 304 SS",4,Amazon 25-pk,7.99,7.99,https://www.amazon.com/dp/B089DYWVC6,Maybe - Ace (Hillman metric drawers),
+B6,"M4 x 25 countersunk socket, DIN 7991, 304 SS",2,Amazon 30-pk,6.43,6.43,https://www.amazon.com/dp/B0DKY5Q45K,Maybe - Ace (Hillman metric drawers),M4 x 16 will not reach the nut
+B7,"Rubber foot 20 x 20 mm, female M5",4,Walmart (Uxcell 4-pk),12.12,12.12,https://www.walmart.com/ip/Uxcell-4Pack-20-x-20mm-Rubber-Female-M5-Thread-Isolator-Replaces-Anti-Vibration-Pads-Flat/10531510304,No,Walmart blocks automated checks - open to confirm
+B8,"M4 nylon-insert locknut, 304 SS",2,Amazon 100-pk,6.99,6.99,https://www.amazon.com/dp/B0BHQMBRFX,Yes - Home Depot / Lowe's / Ace,Buy 2 locally if you're already at the store
+B9,Loctite 243 blue threadlocker,1,Local,~8,~8,,Yes - Home Depot / Lowe's / Ace / auto parts,Cheapest bought locally
+C1,"ELEGOO ASA 1.75 mm, 1 kg",2,ELEGOO direct,17.49,34.98,https://elegoo.com/products/asa-filament-1-75mm-colored-1kg,Micro Center (if nearby),Amazon ~$19.99 if you want Prime shipping
+
+,"Estimated total (excl. bracket quote, shipping, tax)",,,,~110.33
